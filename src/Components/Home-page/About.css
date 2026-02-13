@@ -1,0 +1,165 @@
+/* ================================
+   SECTION WRAPPER
+================================ */
+#rs-about {
+  padding: 80px 0;
+}
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+}
+
+/* ================================
+   LEFT IMAGE GRID STACK
+================================ */
+.image-stack {
+  position: relative;
+  width: 100%;
+  display: grid;
+  gap: 20px;
+}
+
+.image-stack img {
+  width: 100%;
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+  object-fit: cover;
+}
+
+/* Main large image */
+.image-stack .image-1 {
+  grid-column: 1;
+  grid-row: 2 / span 3;
+}
+
+/* Overlapping right image */
+.image-stack .image-2 {
+  grid-column: 1;
+  grid-row: 2;
+  width: 55%;
+  justify-self: end;
+  margin-top: -40px;
+}
+
+/* Bottom-left small image */
+.image-stack .image-3 {
+  grid-column: 1;
+  grid-row: 3;
+  width: 60%;
+}
+
+/* ================================
+   RIGHT SIDE CONTENT
+================================ */
+.sec-title .sub-text {
+  font-size: 14px;
+  font-weight: 700;
+  color: #0b53f0;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  display: inline-block;
+  border-left: 4px solid #0b53f0;
+  padding-left: 10px;
+}
+
+.sec-title .title {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 15px;
+}
+
+.sec-title .desc {
+  max-width: 500px;
+  font-size: 17px;
+  line-height: 1.6;
+  color: #444;
+}
+
+/* ================================
+   SKILL BARS
+================================ */
+.cl-skill-bar {
+  margin-top: 25px;
+}
+
+.skillbar-title {
+  margin-bottom: 6px;
+  font-weight: 400;
+}
+
+.skillbar {
+  height: 10px;
+  width: 100%;
+  background: #eaeaea;
+  border-radius: 6px;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 5px;
+}
+
+.skillbar-bar {
+  height: 100%;
+  background: #4a76d3;
+  border-radius: 6px;
+}
+
+.skill-bar-percent {
+  font-weight: 500;
+  position: absolute;
+  top: -25px;
+  right: 0;
+}
+
+/* ================================
+   BUTTON
+================================ */
+.readon.learn-more {
+  display: inline-block;
+  margin-top: 35px;
+  background: #516ba4;
+  padding: 12px 28px;
+  color: #fff;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.readon.learn-more:hover {
+  background: #083ec1;
+}
+
+/* ================================
+   RESPONSIVE
+================================ */
+@media (max-width: 991px) {
+  .about-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .image-stack {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .sec-title .title {
+    font-size: 32px;
+  }
+}
+
+@media (max-width: 600px) {
+  .image-stack .image-2 {
+    margin-top: -40px;
+    width: 80%;
+  }
+
+  .image-stack .image-3 {
+    width: 70%;
+  }
+
+  .sec-title .title {
+    font-size: 28px;
+  }
+}

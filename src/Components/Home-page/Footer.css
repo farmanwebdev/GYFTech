@@ -1,0 +1,507 @@
+/* Footer Container */
+.rs-footer {
+  background: linear-gradient(135deg, #1a202c 0%, #2d3748 100%);
+  color: #e2e8f0;
+  position: relative;
+  overflow: hidden;
+}
+
+.rs-footer::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #667eea, transparent);
+}
+
+/* Footer Top */
+.footer-top {
+  padding: 80px 0 60px;
+  position: relative;
+  z-index: 1;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+/* Footer Grid */
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 40px;
+}
+
+/* Footer Widget */
+.footer-widget {
+  margin-bottom: 30px;
+}
+
+/* Company Info */
+.company-info .footer-logo span {
+padding: 10px 0px;
+  font-weight: 800;
+  font-size: 20px;
+}
+
+/* .company-info .footer-logo img {
+  height: 50px;
+  width: auto;
+  filter: brightness(0) invert(1);
+} */
+
+.company-description {
+  font-size: 15px;
+  line-height: 1.6;
+  color: #a0aec0;
+  margin-bottom: 25px;
+  padding-top: 10px;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.social-link {
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #e2e8f0;
+  font-size: 16px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+}
+
+.social-link:hover {
+  background: #667eea;
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* Widget Title */
+.widget-title {
+  font-size: 20px;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 25px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.widget-title::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 40px;
+  height: 3px;
+  background: linear-gradient(90deg, #667eea, #764ba2);
+  border-radius: 2px;
+}
+
+/* Footer Menu */
+.footer-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-menu li {
+  margin-bottom: 12px;
+}
+
+.footer-menu a {
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-menu a::before {
+  content: '›';
+  color: #667eea;
+  font-size: 18px;
+  transition: transform 0.3s ease;
+}
+
+.footer-menu a:hover {
+  color: white;
+  transform: translateX(5px);
+}
+
+.footer-menu a:hover::before {
+  transform: translateX(3px);
+}
+
+/* Contact Details */
+.contact-details {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+  margin-bottom: 20px;
+  color: #a0aec0;
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.contact-item i {
+  color: #667eea;
+  font-size: 16px;
+  width: 20px;
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.contact-item a {
+  color: #a0aec0;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+  color: #667eea;
+}
+
+/* Newsletter */
+.newsletter {
+  margin-top: 30px;
+}
+
+.newsletter-description {
+  font-size: 15px;
+  color: #a0aec0;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.newsletter-form {
+  margin-bottom: 15px;
+}
+
+.input-group {
+  position: relative;
+  display: flex;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.3s ease;
+}
+
+.input-group:focus-within {
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.1);
+}
+
+.input-group input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  padding: 15px 20px;
+  color: white;
+  font-size: 15px;
+  outline: none;
+  min-width: 0;
+}
+
+.input-group input::placeholder {
+  color: #718096;
+}
+
+.subscribe-btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  padding: 0 25px;
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.subscribe-btn:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: scale(1.02);
+}
+
+.newsletter-note {
+  font-size: 13px;
+  color: #718096;
+  margin-top: 10px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 25px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.footer-bottom-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.copyright {
+  font-size: 14px;
+  color: #a0aec0;
+}
+
+.copyright a {
+  color: #a0aec0;
+  text-decoration: none;
+  margin: 0 8px;
+  transition: color 0.3s ease;
+}
+
+.copyright a:hover {
+  color: #667eea;
+}
+
+/* Bottom Menu */
+.bottom-menu .footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.bottom-menu .footer-links a {
+  color: #a0aec0;
+  text-decoration: none;
+  font-size: 14px;
+  transition: color 0.3s ease;
+}
+
+.bottom-menu .footer-links a:hover {
+  color: #667eea;
+}
+
+/* Payment Methods */
+.payment-methods {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.payment-label {
+  font-size: 14px;
+  color: #a0aec0;
+}
+
+.payment-icons {
+  display: flex;
+  gap: 12px;
+}
+
+.payment-icons i {
+  font-size: 24px;
+  color: #a0aec0;
+  transition: color 0.3s ease;
+}
+
+.payment-icons i:hover {
+  color: white;
+}
+
+/* Back to Top Button */
+.back-to-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border: none;
+  border-radius: 50%;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(20px);
+  transition: all 0.3s ease;
+  z-index: 999;
+  box-shadow: 0 5px 20px rgba(102, 126, 234, 0.3);
+}
+
+.back-to-top.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.back-to-top:hover {
+  background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+  transform: translateY(-5px);
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .contact-newsletter {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 992px) {
+  .footer-top {
+    padding: 60px 0 40px;
+  }
+  
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+    gap: 15px;
+  }
+  
+  .bottom-menu .footer-links {
+    justify-content: center;
+  }
+  
+  .payment-methods {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .contact-newsletter {
+    grid-column: span 1;
+  }
+  
+  .widget-title {
+    font-size: 18px;
+  }
+  
+  .company-description,
+  .footer-menu a,
+  .contact-item,
+  .newsletter-description {
+    font-size: 14px;
+  }
+  
+  .input-group {
+    flex-direction: column;
+    background: transparent;
+    border: none;
+    gap: 10px;
+  }
+  
+  .input-group input {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+  }
+  
+  .subscribe-btn {
+    width: 100%;
+    justify-content: center;
+    padding: 15px;
+    border-radius: 10px;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+  
+  .back-to-top {
+    bottom: 20px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    font-size: 18px;
+  }
+}
+
+@media (max-width: 576px) {
+  .footer-top {
+    padding: 50px 0 30px;
+  }
+  
+  .footer-grid {
+    gap: 30px;
+  }
+  
+  .widget-title {
+    margin-bottom: 20px;
+  }
+  
+  .company-info .footer-logo img {
+    height: 40px;
+  }
+  
+  .social-link {
+    width: 36px;
+    height: 36px;
+    font-size: 14px;
+  }
+  
+  .bottom-menu .footer-links {
+    gap: 15px;
+  }
+  
+  .payment-icons i {
+    font-size: 20px;
+  }
+}
+
+/* Animation for footer entrance */
+.rs-footer {
+  animation: fadeIn 0.8s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Add scroll detection for back-to-top button */
+@media (min-width: 769px) {
+  .back-to-top {
+    display: flex;
+  }
+}

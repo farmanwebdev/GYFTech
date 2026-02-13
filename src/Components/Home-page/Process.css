@@ -1,0 +1,54 @@
+.rs-process {
+  padding: 180px 0 120px;
+  background: #f8f9fa;
+}
+
+.process-wrap {
+  background: #667eea;
+  color: white;
+  padding: 60px 40px;
+  border-radius: 10px;
+  height: 100%;
+}
+
+.bg3 {
+  background: #667eea;
+}
+
+.white-color {
+  color: white;
+}
+
+.rs-addon-number {
+  margin-bottom: 40px;
+}
+
+.number-area {
+  font-size: 48px;
+  font-weight: 700;
+  color: #667eea;
+  margin-bottom: 15px;
+}
+
+.number-title .title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.number-txt {
+  color: #666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+.contact-us {
+  background: white;
+  color: #667eea;
+}
+
+.contact-us:hover {
+  background: #764ba2;
+  color: white;
+}

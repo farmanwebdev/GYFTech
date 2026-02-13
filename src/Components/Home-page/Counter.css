@@ -1,0 +1,31 @@
+.rs-counter {
+  background: #333;
+  color: white;
+}
+
+.bg2 {
+  background: #333;
+}
+
+.counter-top-area {
+  padding: 80px 0;
+}
+
+.counter-text {
+  text-align: center;
+}
+
+.count-number {
+  font-size: 48px;
+  font-weight: 700;
+  color: #667eea;
+  display: block;
+  margin-bottom: 10px;
+}
+
+.counter-text .title {
+  font-size: 20px;
+  font-weight: 600;
+  color: white;
+  margin: 0;
+}

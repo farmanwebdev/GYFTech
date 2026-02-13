@@ -1,0 +1,135 @@
+/* Section */
+.pricing-section {
+  padding: 60px 20px;
+  text-align: center;
+}
+
+.pricing-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.pricing-line {
+  width: 70px;
+  height: 5px;
+  background: #0a58ff;
+  border-radius: 10px;
+  margin: 10px auto 40px;
+}
+
+/* Grid Layout */
+.pricing-grid {
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  justify-items: center;
+}
+
+/* Cards */
+.pricing-card {
+  width: 100%;
+  max-width: 350px;
+  background: #ffffff;
+  padding: 35px 20px;
+  border-radius: 20px;
+  box-shadow: 0 5px 35px rgba(0, 0, 0, 0.08);
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.pricing-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Highlighted Middle Card */
+.pricing-card.primary {
+  background: linear-gradient(135deg, #0044ff, #0029a6);
+  color: #fff !important;
+}
+
+.pricing-card.primary .pricing-text {
+  color: #dfeaff;
+}
+
+.pricing-card.primary .pricing-badge {
+  background: #ffffff;
+  color: #0044ff;
+}
+
+/* Badge */
+.pricing-badge {
+  position: absolute;
+  top: 25px;
+  left: 0;
+  background: #0a58ff;
+  color: #fff;
+  padding: 8px 18px;
+  border-radius: 0 20px 20px 0;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+/* Icon */
+.pricing-icon {
+  width: 110px;
+  margin: 40px auto 20px;
+  display: block;
+}
+
+/* Price */
+.pricing-amount {
+  font-size: 38px;
+  font-weight: 800;
+  margin-bottom: 5px;
+}
+
+.pricing-amount span {
+  font-size: 22px;
+  vertical-align: top;
+}
+
+.pricing-text {
+  font-size: 18px;
+  font-weight: 500;
+  color: #555;
+}
+.features {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  font-size: 16px;
+  align-items: flex-start;
+  margin-left: 10px;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.feature i {
+  font-size: 16px;
+}
+
+/* Green tick */
+.feature.included i {
+  color: #16c35b;
+  font-weight: bold;
+}
+
+/* Red cross */
+.feature.not-included i {
+  color: #ff3b30;
+  font-weight: bold;
+}
+
+
+/* Responsive */
+@media (max-width: 768px) {
+  .pricing-title {
+    font-size: 32px;
+  }
+}
