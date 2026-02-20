@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
+import { Link } from 'react-router-dom'; // 👈 use Link instead of <a>
 import '../Home-page/Header.css';
 
 function Header() {
@@ -13,21 +14,11 @@ function Header() {
   useEffect(() => {
     function handleScroll() {
       const currentScrollY = window.scrollY;
-      
-      // Detect if scrolled
-      if (currentScrollY > 50) {
-        setIsScrolled(true);
-      } else {
-        setIsScrolled(false);
-      }
-      
-      // Hide/show header on scroll direction
-      if (currentScrollY > lastScrollY && currentScrollY > 100) {
-        setShowHeader(true); // Hide on scroll down
-      } else {
-        setShowHeader(true); // Show on scroll up
-      }
-      
+
+      setIsScrolled(currentScrollY > 50);
+
+      // Show header always for now (optional: can hide on scroll)
+      setShowHeader(true);
       setLastScrollY(currentScrollY);
     }
 
@@ -54,8 +45,8 @@ function Header() {
   }
 
   function toggleDropdown(dropdownId) {
-    setOpenDropdowns(prev => 
-      prev.includes(dropdownId) 
+    setOpenDropdowns(prev =>
+      prev.includes(dropdownId)
         ? prev.filter(id => id !== dropdownId)
         : [...prev, dropdownId]
     );
@@ -73,7 +64,6 @@ function Header() {
     }
   }
 
-  // Determine header classes based on scroll state
   const headerClasses = [
     'full-width-header',
     isScrolled ? 'scrolled' : '',
@@ -89,7 +79,6 @@ function Header() {
             <div className="topbar-content">
               <div className="logo-part">
                 <span>GYFTech</span>
-                {/* <img src="" alt="Logo" /> */}
               </div>
               <div className="contact-info-wrapper">
                 <ul className="rs-contact-info">
@@ -104,7 +93,9 @@ function Header() {
                     <i className="fas fa-envelope"></i>
                     <div className="contact-details">
                       <span className="contact-label">E-mail</span>
-                      <a href="mailto:info@yourmail.com" className="contact-value">info@GYFTechgmail.com</a>
+                      <Link to="mailto:info@GYFTechgmail.com" className="contact-value">
+                        info@GYFTechgmail.com
+                      </Link>
                     </div>
                   </li>
                   <li className="contact-item">
@@ -124,15 +115,17 @@ function Header() {
         <div className="menu-area">
           <div className="container">
             <div className="menu-wrapper">
-              {/* Logo */}
               <div className="site-logo">
-                <a href="/">
-                  <img src="https://plus.unsplash.com/premium_vector-1689096818551-edb79a6fa3da?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Tech Solutions" />
-                </a>
+                <Link to="/">
+                  <img
+                    src="https://plus.unsplash.com/premium_vector-1689096818551-edb79a6fa3da?q=80&w=580&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Tech Solutions"
+                  />
+                </Link>
               </div>
 
               {/* Mobile Menu Toggle */}
-              <button 
+              <button
                 className={`mobile-menu-toggle ${isMenuOpen ? 'active' : ''}`}
                 onClick={toggleMenu}
                 aria-label="Toggle menu"
@@ -145,10 +138,9 @@ function Header() {
               {/* Navigation Menu */}
               <nav className={`main-navigation ${isMenuOpen ? 'active' : ''}`}>
                 <ul className="nav-menu">
-                  
                   {/* Home Dropdown */}
                   <li className={`nav-item has-dropdown ${isDropdownOpen('home') ? 'open' : ''}`}>
-                    <button 
+                    <button
                       className="nav-link dropdown-toggle"
                       onClick={() => toggleDropdown('home')}
                     >
@@ -162,25 +154,31 @@ function Header() {
                         <div className="dropdown-column">
                           <h4 className="dropdown-title">Multipage Demos</h4>
                           <ul className="dropdown-list">
-                            <li><a href="/" onClick={handleLinkClick}>Main Demo</a></li>
-                            <li><a href="index2.html" onClick={handleLinkClick}>Digital Agency 01</a></li>
-                            <li><a href="index3.html" onClick={handleLinkClick}>IT Solution 01</a></li>
-                            <li><a href="index4.html" onClick={handleLinkClick}>Digital Agency 02</a></li>
-                            <li><a href="index5.html" onClick={handleLinkClick}>Software Solution</a></li>
-                            <li><a href="index6.html" onClick={handleLinkClick}>Data Analysis</a></li>
-                            <li><a href="index7.html" onClick={handleLinkClick}>IT Solution 02</a></li>
+                            <li>
+                              <Link to="/" onClick={handleLinkClick}>
+                                Main Demo
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/digital-agency-01" onClick={handleLinkClick}>
+                                Digital Agency 01
+                              </Link>
+                            </li>
+                            <li>
+                              <Link to="/it-solution-01" onClick={handleLinkClick}>
+                                IT Solution 01
+                              </Link>
+                            </li>
                           </ul>
                         </div>
                         <div className="dropdown-column">
                           <h4 className="dropdown-title">Onepage Demos</h4>
                           <ul className="dropdown-list">
-                            <li><a href="onepage1.html" onClick={handleLinkClick}>Main Demo</a></li>
-                            <li><a href="onepage2.html" onClick={handleLinkClick}>Digital Agency 01</a></li>
-                            <li><a href="onepage3.html" onClick={handleLinkClick}>IT Solution 01</a></li>
-                            <li><a href="onepage4.html" onClick={handleLinkClick}>Digital Agency 02</a></li>
-                            <li><a href="onepage5.html" onClick={handleLinkClick}>Software Solution</a></li>
-                            <li><a href="onepage6.html" onClick={handleLinkClick}>Data Analysis</a></li>
-                            <li><a href="onepage7.html" onClick={handleLinkClick}>IT Solution 02</a></li>
+                            <li>
+                              <Link to="/onepage1" onClick={handleLinkClick}>
+                                Main Demo
+                              </Link>
+                            </li>
                           </ul>
                         </div>
                       </div>
@@ -189,14 +187,14 @@ function Header() {
 
                   {/* About */}
                   <li className="nav-item">
-                    <a href="/about" className="nav-link" onClick={handleLinkClick}>
+                    <Link to="/about" className="nav-link" onClick={handleLinkClick}>
                       About
-                    </a>
+                    </Link>
                   </li>
 
-                  {/* Services Dropdown */}
+                  {/* Services */}
                   <li className={`nav-item has-dropdown ${isDropdownOpen('services') ? 'open' : ''}`}>
-                    <button 
+                    <button
                       className="nav-link dropdown-toggle"
                       onClick={() => toggleDropdown('services')}
                     >
@@ -207,118 +205,28 @@ function Header() {
                     </button>
                     <div className="dropdown-menu">
                       <ul className="dropdown-list">
-                        <li><a href="software-development.html" onClick={handleLinkClick}>Software Development</a></li>
-                        <li><a href="web-development.html" onClick={handleLinkClick}>Web Development</a></li>
-                        <li><a href="analytic-solutions.html" onClick={handleLinkClick}>Analytic Solutions</a></li>
-                        <li><a href="cloud-and-devops.html" onClick={handleLinkClick}>Cloud & DevOps</a></li>
-                        <li><a href="product-design.html" onClick={handleLinkClick}>Product Design</a></li>
-                        <li><a href="data-center.html" onClick={handleLinkClick}>Data Center</a></li>
-                      </ul>
-                    </div>
-                  </li>
-
-                  {/* Pages Dropdown */}
-                  <li className={`nav-item has-dropdown ${isDropdownOpen('pages') ? 'open' : ''}`}>
-                    <button 
-                      className="nav-link dropdown-toggle"
-                      onClick={() => toggleDropdown('pages')}
-                    >
-                      Pages
-                      <span className="dropdown-arrow">
-                        <i className="fas fa-chevron-down"></i>
-                      </span>
-                    </button>
-                    <div className="dropdown-menu wide-dropdown">
-                      <div className="dropdown-grid">
-                        <div className="dropdown-column">
-                          <h4 className="dropdown-title">Services Pages</h4>
-                          <ul className="dropdown-list">
-                            <li><a href="services1.html" onClick={handleLinkClick}>Services Style 1</a></li>
-                            <li><a href="services2.html" onClick={handleLinkClick}>Services Style 2</a></li>
-                            <li><a href="services3.html" onClick={handleLinkClick}>Services Style 3</a></li>
-                          </ul>
-                        </div>
-                        <div className="dropdown-column">
-                          <h4 className="dropdown-title">Team</h4>
-                          <ul className="dropdown-list">
-                            <li><a href="our-team.html" onClick={handleLinkClick}>Our Team</a></li>
-                            <li><a href="single-team.html" onClick={handleLinkClick}>Single Team</a></li>
-                          </ul>
-                        </div>
-                        <div className="dropdown-column">
-                          <h4 className="dropdown-title">Case Studies</h4>
-                          <ul className="dropdown-list">
-                            {[1,2,3,4,5,6,7].map(num => (
-                              <li key={num}>
-                                <a href={`case-studies-style${num}.html`} onClick={handleLinkClick}>
-                                  Style {num}
-                                </a>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div className="dropdown-column">
-                          <h4 className="dropdown-title">Shop</h4>
-                          <ul className="dropdown-list">
-                            <li><a href="shop.html" onClick={handleLinkClick}>Shop</a></li>
-                            <li><a href="shop-single.html" onClick={handleLinkClick}>Shop Single</a></li>
-                            <li><a href="cart.html" onClick={handleLinkClick}>Cart</a></li>
-                            <li><a href="checkout.html" onClick={handleLinkClick}>Checkout</a></li>
-                            <li><a href="my-account.html" onClick={handleLinkClick}>My Account</a></li>
-                          </ul>
-                        </div>
-                        <div className="dropdown-column">
-                          <h4 className="dropdown-title">Other Pages</h4>
-                          <ul className="dropdown-list">
-                            <li><a href="pricing.html" onClick={handleLinkClick}>Pricing</a></li>
-                            <li><a href="faq.html" onClick={handleLinkClick}>FAQ</a></li>
-                            <li><a href="error.html" onClick={handleLinkClick}>404 Error</a></li>
-                          </ul>
-                        </div>
-                      </div>
-                    </div>
-                  </li>
-
-                  {/* Blog Dropdown */}
-                  <li className={`nav-item has-dropdown ${isDropdownOpen('blog') ? 'open' : ''}`}>
-                    <button 
-                      className="nav-link dropdown-toggle"
-                      onClick={() => toggleDropdown('blog')}
-                    >
-                      Blog
-                      <span className="dropdown-arrow">
-                        <i className="fas fa-chevron-down"></i>
-                      </span>
-                    </button>
-                    <div className="dropdown-menu">
-                      <ul className="dropdown-list">
-                        <li><a href="blog.html" onClick={handleLinkClick}>Blog Grid</a></li>
-                        <li><a href="blog-details.html" onClick={handleLinkClick}>Blog Details</a></li>
+                        <li>
+                          <Link to="/software-development" onClick={handleLinkClick}>
+                            Software Development
+                          </Link>
+                        </li>
+                        <li>
+                          <Link to="/web-development" onClick={handleLinkClick}>
+                            Web Development
+                          </Link>
+                        </li>
                       </ul>
                     </div>
                   </li>
 
                   {/* Contact */}
                   <li className="nav-item">
-                    <a href="/contact" className="nav-link" onClick={handleLinkClick}>
+                    <Link to="/contact" className="nav-link" onClick={handleLinkClick}>
                       Contact
-                    </a>
+                    </Link>
                   </li>
                 </ul>
               </nav>
-
-              {/* Action Buttons */}
-              <div className="nav-actions">
-                <button className="search-btn" aria-label="Search">
-                  <i className="fas fa-search"></i>
-                </button>
-                <div className="social-links">
-                  <a href="#" aria-label="Facebook"><i className="fab fa-facebook-f"></i></a>
-                  <a href="#" aria-label="Twitter"><i className="fab fa-twitter"></i></a>
-                  <a href="#" aria-label="Pinterest"><i className="fab fa-pinterest-p"></i></a>
-                  <a href="#" aria-label="Instagram"><i className="fab fa-instagram"></i></a>
-                </div>
-              </div>
             </div>
           </div>
         </div>

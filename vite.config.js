@@ -3,5 +3,5 @@ import react from '@vitejs/plugin-react'
 
 export default defineConfig({
   plugins: [react()],
-  base: '/GYFTech/' // 👈 must match your GitHub repo name exactly
+  base: '/GYFTech/', // MUST match your repo name exactly
 })
